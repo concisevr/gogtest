@@ -4,8 +4,7 @@
   "description": "gogtest",
   "main": "gogtest.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node-gyp rebuild"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "daxia",
   "license": "MIT",
@@ -15,8 +14,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/concisevr/gogtest.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   }
 }
