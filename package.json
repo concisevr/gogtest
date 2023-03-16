@@ -1,0 +1,19 @@
+{
+  "name": "gogtest",
+  "version": "1.0.0",
+  "description": "gogtest",
+  "main": "gogtest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "author": "daxia",
+  "license": "ISC",
+  "devDependencies": {
+    "node-addon-api": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/concisevr/gogtest.git"
+  }
+}
