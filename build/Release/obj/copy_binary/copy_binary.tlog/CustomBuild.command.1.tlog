@@ -1,0 +1,9 @@
+^C:\USERS\DAXIA\WORKSPACE\GOGAPI\GOGTEST\DEPS\GOG_SDK\LIBRARIES\GALAXY64.DLL
+call mkdir "C:\Users\daxia\workspace\gogAPI\gogtest\build\lib" 2>nul & set ERRORLEVEL=0 & copy /Y "..\deps\gog_sdk\Libraries\Galaxy64.dll" "C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\Galaxy64.dll"
+if %errorlevel% neq 0 exit /b %errorlevel%
+^C:\USERS\DAXIA\WORKSPACE\GOGAPI\GOGTEST\DEPS\GOG_SDK\LIBRARIES\GALAXY64.LIB
+call mkdir "C:\Users\daxia\workspace\gogAPI\gogtest\build\lib" 2>nul & set ERRORLEVEL=0 & copy /Y "..\deps\gog_sdk\Libraries\Galaxy64.lib" "C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\Galaxy64.lib"
+if %errorlevel% neq 0 exit /b %errorlevel%
+^C:\USERS\DAXIA\WORKSPACE\GOGAPI\GOGTEST\BUILD\RELEASE\NAPI_SAMPLE.NODE
+call mkdir "C:\Users\daxia\workspace\gogAPI\gogtest\build\lib" 2>nul & set ERRORLEVEL=0 & copy /Y "C:\Users\daxia\workspace\gogAPI\gogtest\build\Release\napi_sample.node" "C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\napi_sample.node"
+if %errorlevel% neq 0 exit /b %errorlevel%
