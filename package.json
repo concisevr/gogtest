@@ -1,6 +1,6 @@
 {
   "name": "gogtest",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "gogtest",
   "main": "gogtest.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "install": "node-gyp rebuild"
   },
   "author": "daxia",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "node-addon-api": "^6.0.0"
   },
