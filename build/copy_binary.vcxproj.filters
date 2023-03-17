@@ -70,13 +70,16 @@
     <Filter Include="C:\Users\daxia\workspace\gogAPI">
       <UniqueIdentifier>{9DE09A10-5EAA-C703-53E9-31FAEFFC6C0C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="C:\Users\daxia\workspace\gogAPI\gogtest">
+    <Filter Include="C:\Users\daxia\workspace\gogAPI\test">
+      <UniqueIdentifier>{5763B17F-46DA-9ED7-179F-9C9F273B791C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C:\Users\daxia\workspace\gogAPI\test\gogtest">
       <UniqueIdentifier>{105233EB-B899-64F6-D7A8-870AE548D2B1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="C:\Users\daxia\workspace\gogAPI\gogtest\build">
+    <Filter Include="C:\Users\daxia\workspace\gogAPI\test\gogtest\build">
       <UniqueIdentifier>{D5519164-BF26-36DA-740B-76CEFC1827F4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="C:\Users\daxia\workspace\gogAPI\gogtest\build\Release">
+    <Filter Include="C:\Users\daxia\workspace\gogAPI\test\gogtest\build\Release">
       <UniqueIdentifier>{FF075A12-C1E5-B72E-66FE-329E5E401639}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -93,8 +96,8 @@
     <None Include="..\deps\gog_sdk\Libraries\Galaxy64.lib">
       <Filter>..\deps\gog_sdk\Libraries</Filter>
     </None>
-    <None Include="C:\Users\daxia\workspace\gogAPI\gogtest\build\Release\napi_sample.node">
-      <Filter>C:\Users\daxia\workspace\gogAPI\gogtest\build\Release</Filter>
+    <None Include="C:\Users\daxia\workspace\gogAPI\test\gogtest\build\Release\napi_sample.node">
+      <Filter>C:\Users\daxia\workspace\gogAPI\test\gogtest\build\Release</Filter>
     </None>
   </ItemGroup>
 </Project>

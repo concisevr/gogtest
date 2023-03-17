@@ -28,6 +28,7 @@ const char* client_id = "";
 
 const char* client_secret = "";
 
+int call_result = 0;
 // namespace galaxy
 // {
 // 	namespace api
@@ -35,6 +36,41 @@ const char* client_secret = "";
 // 		extern bool IsFullyInitialized;
 // 	}
 // }
+
+/* 异步回调绑定 */
+class JsCallback : public Napi::AsyncWorker 
+{
+	public:
+		JsCallback(Napi::Function &callback, int runTime = 1) : AsyncWorker(callback), runTime(runTime)
+		{
+
+		};
+		virtual ~JsCallback(){};
+		void Execute()
+		{	
+			std::this_thread::sleep_for(std::chrono::seconds(runTime));
+			if (runTime == 4)
+			{
+				// SetError("failed after 'working' 4 seconds.");
+			// 	Napi::Array arr = Napi::Array::New(Env(),3);
+			// arr.Set(Napi::Number::New(Env(), 0), Napi::String::New(Env(), "test2"));
+			// arr.Set(Napi::Number::New(Env(), 1), Napi::String::New(Env(), "test2"));
+			// arr.Set(Napi::Number::New(Env(), 2), Napi::Number::New(Env(), 456));
+			//把数组对象传递给回调方法
+			// Callback().Call({Env().Null(), arr});
+			}
+		};
+		void OnOK()
+		{
+			Napi::Array arr = Napi::Array::New(Env(),3);
+			arr.Set(Napi::Number::New(Env(), 0), Napi::String::New(Env(), "test1"));
+			arr.Set(Napi::Number::New(Env(), 1), Napi::String::New(Env(), "test1"));
+			arr.Set(Napi::Number::New(Env(), 2), Napi::Number::New(Env(), call_result));
+			//把数组对象传递给回调方法
+			Callback().Call({Env().Null(), arr});
+		};
+		int runTime;
+};
 
 class Ginit : public std::enable_shared_from_this<Ginit>
 {
@@ -63,17 +99,18 @@ class Ginit : public std::enable_shared_from_this<Ginit>
 				if (galaxy::api::GetError()) {
 					cout << "GetError:" << int(1) << endl;
 				} else {
-					cout << "GetError:ok" << int(2) << endl;
+					cout << "GetError:ok" << int(222) << endl;
 				}
 				cout << "listenerRegistrar1:" << int(42) << endl;
 
 				IsFullyInitialized = true;
 				cout << "listenerRegistrar1:" << int(43) << endl;
 				bool logs{galaxy::api::User()->SignedIn()};
+				call_result = logs ? 8 : 9;
 				if (galaxy::api::GetError()) {
 					cout << "GetError:" << int(3) << endl;
 				} else {
-					cout << "GetError:ok" << int(4) << endl;
+					cout << "GetError:ok" << int(444) << endl;
 				}
 				cout << "log" << logs << endl;
 				// galaxy::api::User()->SignInGalaxy();
@@ -104,10 +141,15 @@ class Ginit : public std::enable_shared_from_this<Ginit>
 
 			// galaxy::api::Shutdown();
 		}
+		void callbacktest() 
+		{
+			
+		}
 		// 初始化状态
 		bool IsFullyInitialized;
 		// listeners对象
 		std::vector<std::unique_ptr<galaxy::api::IGalaxyListener>> listeners;
+		// static JsCallback *asyncWorker = NULL inline;
 		// 存储临时数据
 		// jsFunArr
 		// vector jsFunArr{}
@@ -158,8 +200,14 @@ Ginit games;
 Napi::Value ginit(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
     Napi::EscapableHandleScope scope(env);
+	// cout << "166" << endl; 
 	games.Init();
-
+	// cout << "167" << endl; 
+    //格式化输入参数为浮点类型并累加
+    // double arg = info[1].As<Napi::Number>().DoubleValue();
+	// cout << "168" << endl; 
+	// cout << "info env arg: " << arg << endl;
+	// cout << "169" << endl; 
     if (info.Length() < 0)
         return Napi::Boolean::New(env, false);
     if (!info[0].IsFunction())
@@ -176,11 +224,35 @@ Napi::Value ginit(const Napi::CallbackInfo& info) {
     //回调函数返回值
     napi_value result;
     napi_call_function(env, env.Global(), jscb, 2, argv, &result);
+	return Napi::String::New(env, "999");
 
-    return Napi::Value(env, result);
+    // return Napi::Value(env, result);
 
     // return Napi::Number::New(env, 1);
 }; 
+
+Napi::Value AsyncMethod(const Napi::CallbackInfo& info)
+{
+    Napi::Env env = info.Env();
+    //接收Object类型的参数
+    Napi::Object runInfo = info[0].As<Napi::Object>();
+    //此Object类型的参数必定包含timeSpan和callBack两个属性
+    // if (runInfo.Get("callBack").IsNothing() || runInfo.Get("callBack").IsNothing()) {
+    //     Napi::TypeError::New(env, "Wrong arguments Type").ThrowAsJavaScriptException();
+    //     return env.Null();
+    // }
+	int timeSpan = runInfo.Get("timeSpan").As<Napi::Number>();
+    //callBack属性为回调方法类型
+    Napi::Function callback = runInfo.Get("callBack").As<Napi::Function>();
+    //实例化自定义的异步处理对象，把timeSpan和callBack传递给异步处理对象
+    JsCallback *asyncWorker = new JsCallback(callback, timeSpan);
+    //开始执行异步任务
+    asyncWorker->Queue();
+    //返回一个对象，此对象包含msg属性，msg属性的值为字符串please wait...
+    Napi::Object obj = Napi::Object::New(env);
+    obj.Set(Napi::String::New(env, "msg"), Napi::String::New(env, "please wait..."));
+    return obj;
+};
 
 // Napi::Value shutdown(const Napi::CallbackInfo& info) {
 // 	Napi::Env env = info.Env();

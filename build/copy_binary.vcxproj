@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{62C14B33-BF51-3567-1543-90FA48196D4B}</ProjectGuid>
+    <ProjectGuid>{E3862809-51D3-D6D1-953B-9278792B4096}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>copy_binary</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
@@ -130,26 +130,26 @@
   <ItemGroup>
     <CustomBuild Include="..\deps\gog_sdk\Libraries\Galaxy64.dll">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\lib&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;..\deps\gog_sdk\Libraries\Galaxy64.dll&quot; &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\Galaxy64.dll&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
-      <Message>Copying deps/gog_sdk/Libraries/Galaxy64.dll to C:\Users\daxia\workspace\gogAPI\gogtest\build\lib</Message>
-      <Outputs>C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\Galaxy64.dll</Outputs>
+      <Command>call mkdir &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;..\deps\gog_sdk\Libraries\Galaxy64.dll&quot; &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib\Galaxy64.dll&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
+      <Message>Copying deps/gog_sdk/Libraries/Galaxy64.dll to C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib</Message>
+      <Outputs>C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib\Galaxy64.dll</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\deps\gog_sdk\Libraries\Galaxy64.lib">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\lib&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;..\deps\gog_sdk\Libraries\Galaxy64.lib&quot; &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\Galaxy64.lib&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
-      <Message>Copying deps/gog_sdk/Libraries/Galaxy64.lib to C:\Users\daxia\workspace\gogAPI\gogtest\build\lib</Message>
-      <Outputs>C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\Galaxy64.lib</Outputs>
+      <Command>call mkdir &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;..\deps\gog_sdk\Libraries\Galaxy64.lib&quot; &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib\Galaxy64.lib&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
+      <Message>Copying deps/gog_sdk/Libraries/Galaxy64.lib to C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib</Message>
+      <Outputs>C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib\Galaxy64.lib</Outputs>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\daxia\workspace\gogAPI\gogtest\build\Release\napi_sample.node">
+    <CustomBuild Include="C:\Users\daxia\workspace\gogAPI\test\gogtest\build\Release\napi_sample.node">
       <FileType>Document</FileType>
-      <Command>call mkdir &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\lib&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\Release\napi_sample.node&quot; &quot;C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\napi_sample.node&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
-      <Message>Copying C:\Users\daxia\workspace\gogAPI\gogtest/build/Release/napi_sample.node to C:\Users\daxia\workspace\gogAPI\gogtest\build\lib</Message>
-      <Outputs>C:\Users\daxia\workspace\gogAPI\gogtest\build\lib\napi_sample.node</Outputs>
+      <Command>call mkdir &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib&quot; 2&gt;nul &amp; set ERRORLEVEL=0 &amp; copy /Y &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\Release\napi_sample.node&quot; &quot;C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib\napi_sample.node&quot;&#xD;&#xA;if %errorlevel% neq 0 exit /b %errorlevel%</Command>
+      <Message>Copying C:\Users\daxia\workspace\gogAPI\test\gogtest/build/Release/napi_sample.node to C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib</Message>
+      <Outputs>C:\Users\daxia\workspace\gogAPI\test\gogtest\build\lib\napi_sample.node</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="napi_sample.vcxproj">
-      <Project>{B2FC68D2-FF46-3B34-1889-79F9C037D804}</Project>
+      <Project>{78E41239-4C58-A108-9FD1-2DE958D62537}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
