@@ -24,18 +24,15 @@
 
 using namespace std;
 
-const char* client_id = "";
-
-const char* client_secret = "";
-
-int call_result = 0;
-// namespace galaxy
-// {
-// 	namespace api
-// 	{
-// 		extern bool IsFullyInitialized;
-// 	}
-// }
+int call_result1 = 0;
+int call_result2 = 0;
+auto call_result3 = 0;
+auto call_result4= 0;
+namespace
+{
+	static char* client_id = "";
+	static char* client_secret = "";
+}
 
 /* 异步回调绑定 */
 class JsCallback : public Napi::AsyncWorker 
@@ -63,9 +60,10 @@ class JsCallback : public Napi::AsyncWorker
 		void OnOK()
 		{
 			Napi::Array arr = Napi::Array::New(Env(),3);
-			arr.Set(Napi::Number::New(Env(), 0), Napi::String::New(Env(), "test1"));
-			arr.Set(Napi::Number::New(Env(), 1), Napi::String::New(Env(), "test1"));
-			arr.Set(Napi::Number::New(Env(), 2), Napi::Number::New(Env(), call_result));
+			arr.Set(Napi::Number::New(Env(), 0), Napi::Number::New(Env(), call_result1));
+			arr.Set(Napi::Number::New(Env(), 1), Napi::Number::New(Env(), call_result2));
+			arr.Set(Napi::Number::New(Env(), 2), Napi::Number::New(Env(), call_result3));
+			arr.Set(Napi::Number::New(Env(), 3), Napi::Number::New(Env(), call_result4));
 			//把数组对象传递给回调方法
 			Callback().Call({Env().Null(), arr});
 		};
@@ -94,7 +92,8 @@ class Ginit : public std::enable_shared_from_this<Ginit>
 			try
 			{
 				cout << "listenerRegistrar1:" << int(41) << endl;
-
+				
+				cout << "init: " << client_id << " , " << client_secret << endl;
 				galaxy::api::Init({client_id, client_secret});
 				if (galaxy::api::GetError()) {
 					cout << "GetError:" << int(1) << endl;
@@ -106,13 +105,25 @@ class Ginit : public std::enable_shared_from_this<Ginit>
 				IsFullyInitialized = true;
 				cout << "listenerRegistrar1:" << int(43) << endl;
 				bool logs{galaxy::api::User()->SignedIn()};
-				call_result = logs ? 8 : 9;
+				call_result1 = logs ? 8 : 9;
 				if (galaxy::api::GetError()) {
 					cout << "GetError:" << int(3) << endl;
 				} else {
 					cout << "GetError:ok" << int(444) << endl;
 				}
 				cout << "log" << logs << endl;
+				galaxy::api::User()->SignInGalaxy(true);
+				bool isLogged = galaxy::api::User()->IsLoggedOn();
+				call_result2 = isLogged ? 88 : 99;
+
+				cout << "isLogged: " << isLogged << endl;
+				galaxy::api::GalaxyID GalaxyID = galaxy::api::User()->GetGalaxyID().ToUint64();
+				// call_result3 = GalaxyID
+
+				const uint64_t realID = GalaxyID.GetRealID();
+				call_result4 = realID;
+				cout << "GetRealID: " << realID << endl;
+
 				// galaxy::api::User()->SignInGalaxy();
 				// bool isLogged = galaxy::api::User()->IsLoggedOn();
 				// cout << "isLogged: " << isLogged << endl;
@@ -145,6 +156,7 @@ class Ginit : public std::enable_shared_from_this<Ginit>
 		{
 			
 		}
+		
 		// 初始化状态
 		bool IsFullyInitialized;
 		// listeners对象
@@ -201,6 +213,12 @@ Napi::Value ginit(const Napi::CallbackInfo& info) {
 	Napi::Env env = info.Env();
     Napi::EscapableHandleScope scope(env);
 	// cout << "166" << endl; 
+	string clientIDStr = info[1].As<Napi::String>().Utf8Value();
+    client_id = (char*)clientIDStr.c_str();
+    string clientSecretStr = info[2].As<Napi::String>().Utf8Value();
+    client_secret = (char*)clientSecretStr.c_str();
+    cout << "clientID: " << client_id << endl;
+    cout << "clientSecret: " << client_secret << endl;
 	games.Init();
 	// cout << "167" << endl; 
     //格式化输入参数为浮点类型并累加
