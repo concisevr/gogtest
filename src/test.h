@@ -4,10 +4,12 @@
 #include <Windows.h>
 #include <sstream>
 #include <thread>
-
+#include <chrono>
+#include <thread>
 using namespace std;
 
 Napi::Value ginit(const Napi::CallbackInfo& info);
+Napi::Value AsyncMethod(const Napi::CallbackInfo& info);
 // Napi::Value shutdown(const Napi::CallbackInfo& info);
 
 #endif

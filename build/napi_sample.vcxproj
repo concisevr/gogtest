@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B2FC68D2-FF46-3B34-1889-79F9C037D804}</ProjectGuid>
+    <ProjectGuid>{78E41239-4C58-A108-9FD1-2DE958D62537}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>napi_sample</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\test\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
@@ -84,13 +84,13 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\test\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=napi_sample;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;NODE_ADDON_API_DISABLE_DEPRECATED;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\test\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -129,7 +129,7 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\include\node;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\src;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\config;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\openssl\openssl\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\uv\include;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\zlib;C:\Users\daxia\AppData\Local\node-gyp\Cache\14.16.1\deps\v8\include;C:\Users\daxia\workspace\gogAPI\test\gogtest\node_modules\node-addon-api;..\deps\gog_sdk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=napi_sample;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;NAPI_DISABLE_CPP_EXCEPTIONS;NODE_ADDON_API_DISABLE_DEPRECATED;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>

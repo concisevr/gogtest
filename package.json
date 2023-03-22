@@ -1,14 +1,13 @@
 {
   "name": "gogtest",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "gogtest",
   "main": "gogtest.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "node-gyp rebuild"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "daxia",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "node-addon-api": "^6.0.0"
   },
